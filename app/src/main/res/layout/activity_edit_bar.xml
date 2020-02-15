@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_column="1"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".view.BiereActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvNomBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nom du bar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etNomBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:nextFocusDown="@id/etNbFrigos"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFrigos"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Frigos"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imgFrigo"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:layout_weight="1"
+                        android:scaleX="0.80"
+                        android:scaleY="0.75"
+                        android:tint="@color/colorAccent"
+                        app:srcCompat="@drawable/frigo_white" />
+
+                    <EditText
+                        android:id="@+id/etNbFrigos"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:backgroundTint="#FFFFFF"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/etNbEtageres"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEtageres"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Étagères"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imgEtagere"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:layout_weight="1"
+                        android:scaleX="0.65"
+                        android:scaleY="0.65"
+                        android:tint="@color/colorAccent"
+                        app:srcCompat="@drawable/etagere_white" />
+
+                    <EditText
+                        android:id="@+id/etNbEtageres"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:backgroundTint="#FFFFFF"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/etNbBieres"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBieres"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Bières par étagère"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imgBiere"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:layout_weight="1"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:tint="@color/colorAccent"
+                        app:srcCompat="@drawable/biere_white" />
+
+                    <EditText
+                        android:id="@+id/etNbBieres"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:backgroundTint="#FFFFFF"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnModifier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enregistrer" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

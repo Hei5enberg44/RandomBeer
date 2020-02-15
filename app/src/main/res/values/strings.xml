@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Random Beer</string>
+    <string name="title_add_bar">Ajouter un bar</string>
+    <string name="title_activity_bar_list">Liste des bars</string>
+    <string name="title_activity_main">Choisir une bière</string>
+    <string name="dialog_ajouter_bar">Ajouter un bar</string>
+    <string name="dialog_confirm">OK</string>
+    <string name="dialog_cancel">Annuler</string>
+    <string name="dialog_empty_barname">Veuillez saisir un nom de bar</string>
+    <string name="bar_list_fridges">Réfrigérateurs</string>
+    <string name="bar_list_shelves">Étagères</string>
+    <string name="bar_list_beers">Bières par étagère</string>
+</resources>
