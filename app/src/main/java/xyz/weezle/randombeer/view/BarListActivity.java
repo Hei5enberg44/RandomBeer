@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,25 +98,26 @@ public class BarListActivity extends AppCompatActivity {
             }
         }
 
-        // Modification d'un bar
+        // Modification / Suppression d'un bar
         if(requestCode == 2) {
             if(resultCode == RESULT_OK) {
-                bars = barDb.barDao().getAll();
+                if(data.hasExtra("deleteItem")) {
+                    int itemPosition = data.getIntExtra("deleteItem", 0);
+                    bars.remove(itemPosition);
+                    Snackbar.make(findViewById(R.id.coordinationLayout), R.string.bar_deleted, BaseTransientBottomBar.LENGTH_SHORT).show();
+                }
+
+                if(data.hasExtra("editItem")) {
+                    int id = data.getIntExtra("id", 0);
+                    int itemPosition = data.getIntExtra("editItem", 0);
+                    Bar editedBar = barDb.barDao().findById(id);
+                    bars.get(itemPosition).nom = editedBar.nom;
+                    bars.get(itemPosition).nbFrigos = editedBar.nbFrigos;
+                    bars.get(itemPosition).nbEtageres = editedBar.nbEtageres;
+                    bars.get(itemPosition).nbBieres = editedBar.nbBieres;
+                }
+
                 barAdapter.notifyDataSetChanged();
-
-                Snackbar.make(findViewById(R.id.coordinationLayout), R.string.changes_saved, BaseTransientBottomBar.LENGTH_SHORT).show();
-            }
-        }
-
-        // Suppression d'un bar
-        if(requestCode == 3) {
-            if(resultCode == RESULT_OK) {
-                int itemPosition = data.getIntExtra("itemPosition", 0);
-
-                bars.remove(itemPosition);
-                barAdapter.notifyDataSetChanged();
-
-                Snackbar.make(findViewById(R.id.coordinationLayout), R.string.bar_deleted, BaseTransientBottomBar.LENGTH_SHORT).show();
             }
         }
     }

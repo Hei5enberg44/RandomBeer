@@ -73,7 +73,7 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
             Intent intent = new Intent(context, BiereActivity.class);
             intent.putExtra("id", id);
             intent.putExtra("itemPosition", itemPosition);
-            ((Activity) context).startActivityForResult(intent, 3);
+            ((Activity) context).startActivityForResult(intent, 2);
         }
     }
 }

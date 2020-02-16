@@ -1,8 +1,10 @@
 package xyz.weezle.randombeer.view;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,6 +32,7 @@ public class BiereActivity extends AppCompatActivity {
     Bar bar;
     Biere biere;
 
+    int id;
     int itemPosition;
     boolean isEdited = false;
 
@@ -47,7 +50,7 @@ public class BiereActivity extends AppCompatActivity {
         }
 
         // On récupère le bar
-        int id = this.getIntent().getIntExtra("id", 0);
+        id = this.getIntent().getIntExtra("id", 0);
         itemPosition = this.getIntent().getIntExtra("itemPosition", 0);
 
         barDb = BarDatabase.getInstance(this);
@@ -127,13 +130,15 @@ public class BiereActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             case android.R.id.home:
                 if(isEdited) {
-                    Intent intent = new Intent(this, BarListActivity.class);
-                    startActivityForResult(intent, 2);
+                    Intent intent = new Intent();
+                    intent.putExtra("id", id);
+                    intent.putExtra("editItem", itemPosition);
+                    setResult(RESULT_OK, intent);
                 }
                 finish();
                 return true;
             case R.id.menu_suppr_bar:
-                supprimerBar(bar.id, itemPosition);
+                confirmerSuppressionBar();
                 return true;
             case R.id.menu_modif_bar:
                 modifierBar(bar.id);
@@ -150,17 +155,38 @@ public class BiereActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if(isEdited) {
-            Intent intent = new Intent(this, BarListActivity.class);
-            startActivityForResult(intent, 2);
+            Intent intent = new Intent();
+            intent.putExtra("id", id);
+            intent.putExtra("editItem", itemPosition);
+            setResult(RESULT_OK, intent);
         }
+        finish();
     }
 
-    private void supprimerBar(int id, int itemPosition) {
+    private void confirmerSuppressionBar() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.delete_bar_confirmation).setTitle(R.string.delete_bar);
+        builder.setPositiveButton(R.string.positiveButton, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                supprimerBar();
+            }
+        });
+        builder.setNegativeButton(R.string.negativeButton, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.create().show();
+    }
+
+    private void supprimerBar() {
         bar = barDb.barDao().findById(id);
         barDb.barDao().delete(bar);
 
         Intent intent = new Intent();
-        intent.putExtra("itemPosition", itemPosition);
+        intent.putExtra("deleteItem", itemPosition);
         setResult(RESULT_OK, intent);
 
         finish();
@@ -199,6 +225,8 @@ public class BiereActivity extends AppCompatActivity {
                 tvIndiceBiere.setText("");
 
                 isEdited = true;
+
+                Toast.makeText(this, R.string.changes_saved, Toast.LENGTH_SHORT).show();
             }
         }
     }

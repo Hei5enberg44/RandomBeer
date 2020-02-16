@@ -28,4 +28,7 @@
     <string name="third">ème</string>
     <string name="th">ème</string>
     <string name="title_edit_bar">Modifier un bar</string>
+    <string name="delete_bar_confirmation">Êtes-vous sûr(e) ?</string>
+    <string name="negativeButton">Annuler</string>
+    <string name="positiveButton">Oui</string>
 </resources>

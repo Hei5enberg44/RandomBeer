@@ -28,4 +28,7 @@
     <string name="third">rd</string>
     <string name="th">th</string>
     <string name="title_edit_bar">Edit bar</string>
+    <string name="delete_bar_confirmation">Are you sure ?</string>
+    <string name="negativeButton">Cancel</string>
+    <string name="positiveButton">Yes</string>
 </resources>

@@ -27,7 +27,7 @@
                 android:alpha="0.87"
                 android:text="Nom du bar"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
