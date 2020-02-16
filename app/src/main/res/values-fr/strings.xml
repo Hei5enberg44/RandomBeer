@@ -27,4 +27,5 @@
     <string name="second">ème</string>
     <string name="third">ème</string>
     <string name="th">ème</string>
+    <string name="title_edit_bar">Modifier un bar</string>
 </resources>

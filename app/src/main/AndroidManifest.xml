@@ -25,7 +25,7 @@
             android:label="@string/title_add_bar" />
         <activity
             android:name=".view.EditBarActivity"
-            android:label="Modifier un bar" />
+            android:label="@string/title_edit_bar" />
     </application>
 
 </manifest>

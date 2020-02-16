@@ -27,4 +27,5 @@
     <string name="second">nd</string>
     <string name="third">rd</string>
     <string name="th">th</string>
+    <string name="title_edit_bar">Edit bar</string>
 </resources>

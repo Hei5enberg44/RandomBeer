@@ -147,6 +147,14 @@ public class BiereActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        if(isEdited) {
+            Intent intent = new Intent(this, BarListActivity.class);
+            startActivityForResult(intent, 2);
+        }
+    }
+
     private void supprimerBar(int id, int itemPosition) {
         bar = barDb.barDao().findById(id);
         barDb.barDao().delete(bar);
