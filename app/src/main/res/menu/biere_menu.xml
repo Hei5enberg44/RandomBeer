@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/menu_modif_bar"
-        android:title="Modifier le bar" />
+        android:title="@string/edit_bar" />
     <item
         android:id="@+id/menu_suppr_bar"
-        android:title="Supprimer le bar" />
+        android:title="@string/delete_bar" />
 </menu>

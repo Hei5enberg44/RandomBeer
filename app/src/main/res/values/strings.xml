@@ -1,13 +1,30 @@
 <resources>
-    <string name="app_name">Random Beer</string>
-    <string name="title_add_bar">Ajouter un bar</string>
-    <string name="title_activity_bar_list">Liste des bars</string>
-    <string name="title_activity_main">Choisir une bière</string>
-    <string name="dialog_ajouter_bar">Ajouter un bar</string>
-    <string name="dialog_confirm">OK</string>
-    <string name="dialog_cancel">Annuler</string>
-    <string name="dialog_empty_barname">Veuillez saisir un nom de bar</string>
-    <string name="bar_list_fridges">Réfrigérateurs</string>
-    <string name="bar_list_shelves">Étagères</string>
-    <string name="bar_list_beers">Bières par étagère</string>
+    <string name="app_name" translatable="false">Random Beer</string>
+    <string name="title_add_bar">Add bar</string>
+    <string name="title_activity_bar_list">Bar list</string>
+    <string name="title_activity_main">Choose a beer</string>
+    <string name="bar_name">Bar name</string>
+    <string name="Fridges">Fridges</string>
+    <string name="Shelves">Shelves</string>
+    <string name="Beers">Beers per shelf</string>
+    <string name="fridge">fridge</string>
+    <string name="shelve">shelves</string>
+    <string name="beer">beer</string>
+    <string name="add">add</string>
+    <string name="your_choice">Your choice</string>
+    <string name="from_the_left">(From the left)</string>
+    <string name="from_the_top">(From the top)</string>
+    <string name="choose_a_beer">Choose a beer</string>
+    <string name="save">Save</string>
+    <string name="edit_bar">Edit bar</string>
+    <string name="delete_bar">Delete bar</string>
+    <string name="bar_added">Bar added</string>
+    <string name="changes_saved">Changes saved</string>
+    <string name="bar_deleted">Bar deleted</string>
+    <string name="error_complete_all_fields">Please complete all fields</string>
+    <string name="first1">st</string>
+    <string name="first2">st</string>
+    <string name="second">nd</string>
+    <string name="third">rd</string>
+    <string name="th">th</string>
 </resources>

@@ -57,7 +57,7 @@ public class AddBarActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(valFrigos) || TextUtils.isEmpty(valEtageres)
                         || TextUtils.isEmpty(valBieres) || TextUtils.isEmpty(valNomBar)) {
                     // Avertissement si l'utilisateur n'a pas rempli tous les champs
-                    Toast.makeText(v.getContext(), "Veuillez compléter tous les champs", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), R.string.error_complete_all_fields, Toast.LENGTH_SHORT).show();
                 } else {
                     // Traitement des données
                     String nomBar = valNomBar;
@@ -73,11 +73,6 @@ public class AddBarActivity extends AppCompatActivity {
                     bar.nbBieres = nbBieres;
 
                     ajouterBar(bar);
-
-                    // On cache le clavier
-                    // txtFrigos.onEditorAction(EditorInfo.IME_ACTION_DONE);
-                    // txtEtageres.onEditorAction(EditorInfo.IME_ACTION_DONE);
-                    // txtBieres.onEditorAction(EditorInfo.IME_ACTION_DONE);
                 }
             }
         });

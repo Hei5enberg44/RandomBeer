@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,8 +49,6 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public LinearLayout llCheckBox;
-        public CheckBox cbCheckBox;
         public TextView tvNomBar;
         public TextView tvNbFrigos;
         public TextView tvNbEtageres;
@@ -61,15 +57,12 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            llCheckBox = (LinearLayout) itemView.findViewById(R.id.llCheckBox);
-            cbCheckBox = (CheckBox) itemView.findViewById(R.id.cbCheckBox);
             tvNomBar = (TextView) itemView.findViewById(R.id.tvNomBar);
             tvNbFrigos = (TextView) itemView.findViewById(R.id.tvNbFrigos);
             tvNbEtageres = (TextView) itemView.findViewById(R.id.tvNbEtageres);
             tvNbBieres = (TextView) itemView.findViewById(R.id.tvNbBieres);
 
             itemView.setOnClickListener(this);
-            // itemView.setOnLongClickListener(this);
         }
 
         @Override
@@ -79,17 +72,8 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.ViewHolder> {
             int id = bars.get(itemPosition).id;
             Intent intent = new Intent(context, BiereActivity.class);
             intent.putExtra("id", id);
-            intent.putExtra("position", itemPosition);
+            intent.putExtra("itemPosition", itemPosition);
             ((Activity) context).startActivityForResult(intent, 3);
         }
-
-        /*@Override
-        public boolean onLongClick(View v) {
-            int itemPosition = getLayoutPosition();
-            llCheckBox.setVisibility(View.VISIBLE);
-            cbCheckBox.setChecked(true);
-            Toast.makeText(v.getContext(), "LongCLick", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
     }
 }

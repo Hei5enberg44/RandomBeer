@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +92,8 @@ public class BarListActivity extends AppCompatActivity {
 
                 bars.add(bar);
                 barAdapter.notifyDataSetChanged();
+
+                Snackbar.make(findViewById(R.id.coordinationLayout), R.string.bar_added, BaseTransientBottomBar.LENGTH_SHORT).show();
             }
         }
 
@@ -99,6 +102,8 @@ public class BarListActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK) {
                 bars = barDb.barDao().getAll();
                 barAdapter.notifyDataSetChanged();
+
+                Snackbar.make(findViewById(R.id.coordinationLayout), R.string.changes_saved, BaseTransientBottomBar.LENGTH_SHORT).show();
             }
         }
 
@@ -110,7 +115,7 @@ public class BarListActivity extends AppCompatActivity {
                 bars.remove(itemPosition);
                 barAdapter.notifyDataSetChanged();
 
-                Toast.makeText(this, "Bar supprimé", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(R.id.coordinationLayout), R.string.bar_deleted, BaseTransientBottomBar.LENGTH_SHORT).show();
             }
         }
     }

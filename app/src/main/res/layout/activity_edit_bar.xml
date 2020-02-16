@@ -30,7 +30,7 @@
                     android:id="@+id/tvNomBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nom du bar"
+                    android:text="@string/bar_name"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
@@ -71,7 +71,7 @@
                         android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Frigos"
+                        android:text="@string/Fridges"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -113,7 +113,7 @@
                         android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Étagères"
+                        android:text="@string/Shelves"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -155,7 +155,7 @@
                         android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Bières par étagère"
+                        android:text="@string/Beers"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -199,7 +199,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Enregistrer" />
+                android:text="@string/save" />
         </TableRow>
     </TableLayout>
 

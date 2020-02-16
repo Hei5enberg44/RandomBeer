@@ -3,7 +3,6 @@ package xyz.weezle.randombeer.view;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,6 +30,7 @@ public class BiereActivity extends AppCompatActivity {
     Bar bar;
     Biere biere;
 
+    int itemPosition;
     boolean isEdited = false;
 
     // Base de données
@@ -48,6 +48,7 @@ public class BiereActivity extends AppCompatActivity {
 
         // On récupère le bar
         int id = this.getIntent().getIntExtra("id", 0);
+        itemPosition = this.getIntent().getIntExtra("itemPosition", 0);
 
         barDb = BarDatabase.getInstance(this);
         bar = barDb.barDao().findById(id);
@@ -74,12 +75,46 @@ public class BiereActivity extends AppCompatActivity {
                 tvIndiceEtagere.setVisibility(View.VISIBLE);
                 tvIndiceBiere.setVisibility(View.VISIBLE);
 
+                String count = "";
+
+                // Frigo
                 int nFrigo = biere.aleaFrigo;
-                String frigo = nFrigo + (nFrigo == 1 ? "er" : "ème") + " frigo";
+                if(nFrigo == 1) {
+                    count = getString(R.string.first1);
+                } else if(nFrigo == 2) {
+                    count = getString(R.string.second);
+                } else if(nFrigo == 3) {
+                    count = getString(R.string.third);
+                } else {
+                    count = getString(R.string.th);
+                }
+                String frigo = nFrigo + count + " " + getString(R.string.fridge);
+
+                // Étagère
                 int nEtagere = biere.aleaEtagere;
-                String etagere = nEtagere + (nEtagere == 1 ? "ère" : "ème") + " étagère";
+                if(nEtagere == 1) {
+                    count = getString(R.string.first2);
+                } else if(nEtagere == 2) {
+                    count = getString(R.string.second);
+                } else if(nEtagere == 3) {
+                    count = getString(R.string.third);
+                } else {
+                    count = getString(R.string.th);
+                }
+                String etagere = nEtagere + count + " " + getString(R.string.shelve);
+
+                // Bière
                 int nBiere = biere.aleaBiere;
-                String biere = nBiere + (nBiere == 1 ? "ère" : "ème") + " bière";
+                if(nBiere == 1) {
+                    count = getString(R.string.first2);
+                } else if(nBiere == 2) {
+                    count = getString(R.string.second);
+                } else if(nBiere == 3) {
+                    count = getString(R.string.third);
+                } else {
+                    count = getString(R.string.th);
+                }
+                String biere = nBiere + count + " " + getString(R.string.beer);
 
                 tvNFrigo.setText(frigo);
                 tvNEtagere.setText(etagere);
@@ -98,7 +133,7 @@ public class BiereActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.menu_suppr_bar:
-                supprimerBar(bar.id);
+                supprimerBar(bar.id, itemPosition);
                 return true;
             case R.id.menu_modif_bar:
                 modifierBar(bar.id);
@@ -112,12 +147,12 @@ public class BiereActivity extends AppCompatActivity {
         return true;
     }
 
-    private void supprimerBar(int id) {
+    private void supprimerBar(int id, int itemPosition) {
         bar = barDb.barDao().findById(id);
         barDb.barDao().delete(bar);
 
         Intent intent = new Intent();
-        intent.putExtra("id", id);
+        intent.putExtra("itemPosition", itemPosition);
         setResult(RESULT_OK, intent);
 
         finish();
@@ -156,8 +191,6 @@ public class BiereActivity extends AppCompatActivity {
                 tvIndiceBiere.setText("");
 
                 isEdited = true;
-
-                Toast.makeText(this, "Bar modifié", Toast.LENGTH_SHORT).show();
             }
         }
     }

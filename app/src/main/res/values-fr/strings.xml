@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Random Beer</string>
+    <string name="title_add_bar">Ajouter un bar</string>
+    <string name="title_activity_bar_list">Liste des bars</string>
+    <string name="title_activity_main">Choisir une bière</string>
+    <string name="bar_name">Nom du bar</string>
+    <string name="Fridges">Frigos</string>
+    <string name="Shelves">Étagères</string>
+    <string name="Beers">Bières par étagère</string>
+    <string name="fridge">frigo</string>
+    <string name="shelve">étagère</string>
+    <string name="beer">bière</string>
+    <string name="add">Ajouter</string>
+    <string name="your_choice">Votre choix</string>
+    <string name="from_the_left">(En partant de la gauche)</string>
+    <string name="from_the_top">(En partant du haut)</string>
+    <string name="choose_a_beer">Choisir une bière</string>
+    <string name="save">Enregistrer</string>
+    <string name="edit_bar">Modifier le bar</string>
+    <string name="delete_bar">Supprimer le bar</string>
+    <string name="bar_added">Bar ajouté</string>
+    <string name="changes_saved">Modifications effectuées</string>
+    <string name="bar_deleted">Bar supprimé</string>
+    <string name="error_complete_all_fields">Veuillez compléter tous les champs</string>
+    <string name="first1">er</string>
+    <string name="first2">ère</string>
+    <string name="second">ème</string>
+    <string name="third">ème</string>
+    <string name="th">ème</string>
+</resources>

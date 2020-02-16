@@ -14,21 +14,6 @@
         android:padding="16dp">
 
         <LinearLayout
-            android:id="@+id/llCheckBox"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <CheckBox
-                android:id="@+id/cbCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -40,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
                 android:alpha="0.87"
-                android:text="Pipeline"
+                android:text="Nom du bar"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -54,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="@string/bar_list_fridges" />
+                    android:text="@string/Fridges" />
 
                 <TextView
                     android:id="@+id/tvNbFrigos"
@@ -75,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="@string/bar_list_shelves" />
+                    android:text="@string/Shelves" />
 
                 <TextView
                     android:id="@+id/tvNbEtageres"
@@ -96,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="@string/bar_list_beers" />
+                    android:text="@string/Beers" />
 
                 <TextView
                     android:id="@+id/tvNbBieres"
